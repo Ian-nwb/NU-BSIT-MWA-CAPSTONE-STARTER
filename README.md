@@ -1,4 +1,4 @@
-# NU-CCIT Capstone Starter
+# NU-CCIT Capstone Starter(ABANDONED PROJECT BABALIKAN NI IAN OCTOBER SORRYYYYYYYY)
 
 A structured monorepo template for **National University CCIT** capstone projects following a multi-layer **MVC architecture** — covering backend, frontend, mobile, infrastructure, novelty technology, and academic manuscript.
 
