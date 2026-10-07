@@ -35,24 +35,22 @@ Firebase
 
 ## Tech Stack
 
-
-| Layer          | Technology                                                                            |
-| -------------- | ------------------------------------------------------------------------------------- |
-| Database       | **MongoDB Atlas** (recommended for deployment) — Docker + Mongo Express for local dev |
-| Backend        | Node.js / Bun, Express.js REST API                                                    |
-| Frontend       | React + Vite                                                                          |
-| Mobile         | Flutter (Dart)                                                                        |
-| Testing        | Jest, Supertest, Newman, Playwright, k6                                               |
-| Infrastructure | Docker, Docker Compose                                                                |
-| CI/CD          | GitHub Actions                                                                        |
-| Optional services | Firebase (optional: Auth, FCM, Firestore, Storage)                                    |
-
+| Layer | Technology |
+| --- | --- |
+| Database | **MongoDB Atlas** (recommended for deployment) — Docker + Mongo Express for local dev |
+| Backend | Node.js / Bun, Express.js REST API |
+| Frontend | React + Vite |
+| Mobile | Flutter (Dart) |
+| Testing | Jest, Supertest, Newman, Playwright, k6 |
+| Infrastructure | Docker, Docker Compose |
+| CI/CD | GitHub Actions |
+| Optional services | Firebase (optional: Auth, FCM, Firestore, Storage) |
 
 ---
 
 ## Project Structure
 
-```
+```javascript
 NU-CCIT-Capstone-Starter/
 │
 ├── .github/
@@ -136,21 +134,19 @@ NU-CCIT-Capstone-Starter/
 
 ### Folder reference
 
-
-| Folder        | Purpose                                                             |
-| ------------- | ------------------------------------------------------------------- |
-| `.vscode/`    | Shared VS Code settings, extensions, debug and task configs         |
-| `backend/`    | REST API in layered MVC                                             |
-| `frontend/`   | React web client                                                    |
-| `mobile/`     | Flutter client                                                      |
-| `tests/`      | Unit, integration, API, functional, E2E, load, and security tests   |
-| `infra/`      | Docker Compose files and deployment config                          |
-| `scripts/`    | Automation for setup, seeding, backups                              |
-| `docs/`       | API spec, diagrams, ADRs                                            |
-| `guides/`     | Onboarding and how-to guides                                        |
-| `manuscript/` | Capstone paper                                                      |
-| `novelty/`    | Evidence of what makes the system different from existing solutions |
-
+| Folder | Purpose |
+| --- | --- |
+| `.vscode/` | Shared VS Code settings, extensions, debug and task configs |
+| `backend/` | REST API in layered MVC |
+| `frontend/` | React web client |
+| `mobile/` | Flutter client |
+| `tests/` | Unit, integration, API, functional, E2E, load, and security tests |
+| `infra/` | Docker Compose files and deployment config |
+| `scripts/` | Automation for setup, seeding, backups |
+| `docs/` | API spec, diagrams, ADRs |
+| `guides/` | Onboarding and how-to guides |
+| `manuscript/` | Capstone paper |
+| `novelty/` | Evidence of what makes the system different from existing solutions |
 
 ---
 
@@ -158,15 +154,28 @@ NU-CCIT-Capstone-Starter/
 
 The `novelty/` folder documents what separates this system from existing ones. Use it to keep your defense material in one place.
 
-**Your novelty does not have to be a brand-new invention.** It can be any tech-related differentiator that is unique to your system compared to existing solutions, for example:
+**Your novelty does not have to be a brand-new invention.** It can be any tech-related differentiator that is unique to your system compared to existing solutions. Here are accepted novelty categories and examples:
 
-- **Microservices** — splitting the backend into independently deployable services
-- **Artificial Intelligence** — ML models, chatbots, recommendation engines, image recognition
-- **Internet of Things (IoT)** — sensor integration, embedded devices, real-time telemetry
-- **Cryptocurrency / Blockchain** — wallets, smart contracts, Web3 integrations
-- **Automation** — workflow automation, scheduled tasks, RPA-style processing
-- **Or anything tech-related** — a unique algorithm, an uncommon stack combination, a novel workflow — as long as you can show how your system differs from existing ones
-
+| Category | Examples |
+| --- | --- |
+| **AI / ML** | Model training, inference pipeline, dataset processing, recommendation engines, LLM-powered features (e.g. Gemini/OpenAI API integration), natural language search, document classification |
+| **Blockchain** | Smart contracts, on-chain logic, wallet integration, NFT-based certificates/records, decentralized identity, supply-chain traceability ledgers |
+| **Automation** | RPA scripts, workflow automation, scheduled jobs, auto-generated reports, email/SMS notification pipelines, CI/CD-triggered data tasks |
+| **Systems** | Go or Rust microservices, low-level optimization, custom caching layers, message queues (Kafka/RabbitMQ), load balancers, gRPC services |
+| **Accessibility** | OCR, text-to-speech, voice commands, screen-reader support, sign-language recognition, high-contrast/dyslexia-friendly UI modes, closed captioning |
+| **IoT / Hardware** | Sensor integration, Raspberry Pi/Arduino/ESP32 nodes, real-time telemetry, NFC/RFID access systems, smart home automation, environmental monitoring (temp/humidity/air quality), GPS tracking devices |
+| **Computer Vision** | Object/face detection, image classification, video analytics, license plate recognition, defect/quality inspection, pose estimation, barcode/QR scanning |
+| **NLP** | Chatbots, sentiment analysis, text summarization, language translation, resume/document parsing, spam/toxicity detection, voice-to-text transcription |
+| **AR / VR** | Immersive overlays, 3D visualization, spatial interaction, virtual try-on, AR wayfinding/indoor navigation, VR training simulations |
+| **Predictive Analytics** | Forecasting models, anomaly detection, risk scoring, demand/inventory prediction, churn prediction, predictive maintenance |
+| **Real-time Systems** | Live dashboards, WebSocket/streaming data, push notifications, live chat/collaboration, real-time location tracking, live auction/bidding systems |
+| **Offline-first** | Local-first sync, conflict resolution, works without internet, local caching with background sync, offline maps/data entry for field work |
+| **Gamification** | Points/badges/leaderboards, adaptive difficulty, engagement mechanics, streaks/daily challenges, redeemable rewards systems |
+| **Security / Crypto** | End-to-end encryption, biometric auth, anomaly-based fraud detection, two-factor authentication, intrusion detection (IDS/IPS), secure file sharing |
+| **Data Visualization** | Interactive charts/graphs, geospatial/heat maps, admin analytics dashboards, drill-down reporting tools |
+| **Multi-tenancy / SaaS** | Organization-based data isolation, subscription/billing integration, role-based workspace permissions, usage metering |
+| **Digital Twins** | Virtual replicas of physical assets/processes, simulation-based monitoring, what-if scenario testing |
+| **Other** | Anything not covered above — bring your own idea |
 
 - **Problem gap**: what current systems fail to do
 - **Comparison matrix**: your system vs. existing systems, feature by feature
@@ -176,7 +185,7 @@ The `novelty/` folder documents what separates this system from existing ones. U
 
 Suggested files:
 
-```
+```javascript
 novelty/
 ├── README.md                 # One-page summary of the novelty
 ├── comparison-matrix.md      # Feature comparison table
@@ -190,34 +199,30 @@ novelty/
 
 Install these before anything else.
 
-
-| Tool                      | Purpose                                      | Download                                                                                                       |
-| ------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **Git**                   | Version control                              | [https://git-scm.com/downloads](https://git-scm.com/downloads)                                                 |
-| **Node.js** (LTS)         | JS runtime, npm                              | [https://nodejs.org/en/download](https://nodejs.org/en/download)                                               |
-| **Bun**                   | Fast JS runtime / package manager            | [https://bun.sh/docs/installation](https://bun.sh/docs/installation)                                           |
-| **Docker Desktop**        | Containers (MongoDB)                         | [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)             |
-| **Docker Engine** (Linux) | Containers without Desktop                   | [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)                             |
-| **Docker Compose**        | Multi-container orchestration                | [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)                           |
-| **MongoDB Compass**       | GUI for MongoDB (dev only)                   | [https://www.mongodb.com/try/download/compass](https://www.mongodb.com/try/download/compass)                   |
-| **MongoDB Atlas**         | Managed MongoDB — recommended for deployment | [https://www.mongodb.com/atlas](https://www.mongodb.com/atlas)                                                 |
-| **VS Code**               | Editor (recommended)                         | [https://code.visualstudio.com/download](https://code.visualstudio.com/download)                               |
-| **Postman**               | API testing (optional)                       | [https://www.postman.com/downloads/](https://www.postman.com/downloads/)                                       |
-| **Newman**                | Run Postman collections in CLI               | [https://www.npmjs.com/package/newman](https://www.npmjs.com/package/newman)                                   |
-| **Playwright**            | E2E browser testing                          | [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro)                                         |
-| **k6**                    | Load testing                                 | [https://grafana.com/docs/k6/latest/set-up/install-k6/](https://grafana.com/docs/k6/latest/set-up/install-k6/) |
-
+| Tool | Purpose | Download |
+| --- | --- | --- |
+| **Git** | Version control | [https://git-scm.com/downloads](https://git-scm.com/downloads) |
+| **Node.js** (LTS) | JS runtime, npm | [https://nodejs.org/en/download](https://nodejs.org/en/download) |
+| **Bun** | Fast JS runtime / package manager | [https://bun.sh/docs/installation](https://bun.sh/docs/installation) |
+| **Docker Desktop** | Containers (MongoDB) | [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/) |
+| **Docker Engine** (Linux) | Containers without Desktop | [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) |
+| **Docker Compose** | Multi-container orchestration | [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/) |
+| **MongoDB Compass** | GUI for MongoDB (dev only) | [https://www.mongodb.com/try/download/compass](https://www.mongodb.com/try/download/compass) |
+| **MongoDB Atlas** | Managed MongoDB — recommended for deployment | [https://www.mongodb.com/atlas](https://www.mongodb.com/atlas) |
+| **VS Code** | Editor (recommended) | [https://code.visualstudio.com/download](https://code.visualstudio.com/download) |
+| **Postman** | API testing (optional) | [https://www.postman.com/downloads/](https://www.postman.com/downloads/) |
+| **Newman** | Run Postman collections in CLI | [https://www.npmjs.com/package/newman](https://www.npmjs.com/package/newman) |
+| **Playwright** | E2E browser testing | [https://playwright.dev/docs/intro](https://playwright.dev/docs/intro) |
+| **k6** | Load testing | [https://grafana.com/docs/k6/latest/set-up/install-k6/](https://grafana.com/docs/k6/latest/set-up/install-k6/) |
 
 ### Firebase CLI (optional)
 
 Only needed if your capstone uses Firebase. The CLI manages projects, emulators, and deployments; FlutterFire CLI wires Firebase into the Flutter app.
 
-
-| Tool                | Purpose                            | Install                                                                          |
-| ------------------- | ---------------------------------- | -------------------------------------------------------------------------------- |
-| **Firebase CLI**    | Manage Firebase from the terminal  | [https://firebase.google.com/docs/cli](https://firebase.google.com/docs/cli)     |
+| Tool | Purpose | Install |
+| --- | --- | --- |
+| **Firebase CLI** | Manage Firebase from the terminal | [https://firebase.google.com/docs/cli](https://firebase.google.com/docs/cli) |
 | **FlutterFire CLI** | Wire Firebase into the Flutter app | [https://firebase.flutter.dev/docs/cli/](https://firebase.flutter.dev/docs/cli/) |
-
 
 ```bash
 # macOS / Linux
@@ -250,16 +255,14 @@ flutterfire configure        # run inside mobile/
 
 The Flutter client is a required part of this project. Every team member doing mobile work needs the Flutter toolchain.
 
-
-| Tool                      | Download                                                                                                                                       |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Flutter SDK** (all OS)  | [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)                                                   |
-| Flutter on Windows        | [https://docs.flutter.dev/get-started/install/windows](https://docs.flutter.dev/get-started/install/windows)                                   |
-| Flutter on macOS          | [https://docs.flutter.dev/get-started/install/macos](https://docs.flutter.dev/get-started/install/macos)                                       |
-| Flutter on Linux          | [https://docs.flutter.dev/get-started/install/linux](https://docs.flutter.dev/get-started/install/linux)                                       |
-| **Android Studio**        | [https://developer.android.com/studio](https://developer.android.com/studio)                                                                   |
+| Tool | Download |
+| --- | --- |
+| **Flutter SDK** (all OS) | [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install) |
+| Flutter on Windows | [https://docs.flutter.dev/get-started/install/windows](https://docs.flutter.dev/get-started/install/windows) |
+| Flutter on macOS | [https://docs.flutter.dev/get-started/install/macos](https://docs.flutter.dev/get-started/install/macos) |
+| Flutter on Linux | [https://docs.flutter.dev/get-started/install/linux](https://docs.flutter.dev/get-started/install/linux) |
+| **Android Studio** | [https://developer.android.com/studio](https://developer.android.com/studio) |
 | Flutter VS Code extension | [https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter) |
-
 
 > **Windows users:** Docker Desktop requires WSL 2. Install it here: [https://learn.microsoft.com/windows/wsl/install](https://learn.microsoft.com/windows/wsl/install)
 
@@ -286,14 +289,12 @@ The `.vscode/` folder is committed so the whole team shares the same editor conf
 2. Click **Install** when prompted for recommended extensions (or open the Extensions panel and filter by `@recommended`).
 3. Settings apply automatically: format on save, ESLint auto-fix, Prettier.
 
-
-| File              | What it does                                                                                                        |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
+| File | What it does |
+| --- | --- |
 | `extensions.json` | Recommends ESLint, Prettier, Docker, MongoDB, Dart/Flutter, Playwright, Jest, Thunder Client, GitLens, EditorConfig |
-| `settings.json`   | Format on save, ESLint fix on save, Prettier as default formatter, hides `node_modules`                             |
-| `launch.json`     | Debug the backend, debug the current Jest file, launch Chrome against the frontend, debug the Flutter app           |
-| `tasks.json`      | Run Docker up/down and each test suite from **Terminal → Run Task**                                                 |
-
+| `settings.json` | Format on save, ESLint fix on save, Prettier as default formatter, hides `node_modules` |
+| `launch.json` | Debug the backend, debug the current Jest file, launch Chrome against the frontend, debug the Flutter app |
+| `tasks.json` | Run Docker up/down and each test suite from **Terminal → Run Task** |
 
 Debug: press `F5` and pick a configuration.
 
@@ -323,12 +324,10 @@ cd infra
 docker compose up -d
 ```
 
-
-| Service       | Default URL / Port                                                |
-| ------------- | ----------------------------------------------------------------- |
-| MongoDB       | `mongodb://localhost:27018`                                       |
+| Service | Default URL / Port |
+| --- | --- |
+| MongoDB | `mongodb://localhost:27018` |
 | Mongo Express | [http://localhost:8085](http://localhost:8085) (`admin` / `pass`) |
-
 
 ```bash
 docker ps                # confirm containers are running
@@ -346,15 +345,13 @@ cd infra
 docker compose up -d
 ```
 
-
-| Service       | URL                                            | Container             |
-| ------------- | ---------------------------------------------- | --------------------- |
-| Frontend      | [http://localhost:5173](http://localhost:5173) | `capstone_web`        |
-| Backend API   | [http://localhost:5000](http://localhost:5000) | `capstone_api`        |
-| MongoDB       | `mongodb://localhost:27018`                    | `capstone_db`         |
-| Mongo Express | [http://localhost:8085](http://localhost:8085) | `capstone_gui`        |
-| Mobile (web)  | [http://localhost:8080](http://localhost:8080) | `capstone_mobile_web` |
-
+| Service | URL | Container |
+| --- | --- | --- |
+| Frontend | [http://localhost:5173](http://localhost:5173) | `capstone_web` |
+| Backend API | [http://localhost:5000](http://localhost:5000) | `capstone_api` |
+| MongoDB | `mongodb://localhost:27018` | `capstone_db` |
+| Mongo Express | [http://localhost:8085](http://localhost:8085) | `capstone_gui` |
+| Mobile (web) | [http://localhost:8080](http://localhost:8080) | `capstone_mobile_web` |
 
 Include the Flutter web build:
 
@@ -436,7 +433,7 @@ API_URL=http://localhost:5000/api
 
 > If your MongoDB container has authentication enabled, use:
 > `mongodb://<user>:<password>@localhost:27018/capstone_db?authSource=admin`
->
+> >
 > Never commit `.env` files.
 
 > **MongoDB Compass and Mongo Express are dev tools only.** In production, connect the backend to MongoDB Atlas by setting `MONGO_URI` to your Atlas SRV connection string — no changes to the code are needed.
@@ -459,13 +456,11 @@ flutterfire configure
 
 Where the config lives:
 
-
-| Layer    | Setup                                                                                      |
-| -------- | ------------------------------------------------------------------------------------------ |
-| Backend  | `backend/src/config/firebase.js` — initialized from a service account key stored in `.env` |
-| Frontend | `frontend/src/config/firebase.js` — initialized from `VITE_FIREBASE_*` env vars            |
-| Mobile   | `mobile/lib/firebase_options.dart` — generated by `flutterfire configure`                  |
-
+| Layer | Setup |
+| --- | --- |
+| Backend | `backend/src/config/firebase.js` — initialized from a service account key stored in `.env` |
+| Frontend | `frontend/src/config/firebase.js` — initialized from `VITE_FIREBASE_*` env vars |
+| Mobile | `mobile/lib/firebase_options.dart` — generated by `flutterfire configure` |
 
 Add these to `.env` files (never commit them):
 
@@ -488,14 +483,12 @@ Document any Firebase usage in `docs/decisions/` as an ADR (why Firebase, what i
 
 Open four terminals:
 
-
-| Terminal | Directory   | Command                |
-| -------- | ----------- | ---------------------- |
-| 1        | `infra/`    | `docker compose up -d` |
-| 2        | `backend/`  | `bun run dev`          |
-| 3        | `frontend/` | `bun run dev`          |
-| 4        | `mobile/`   | `flutter run`          |
-
+| Terminal | Directory | Command |
+| --- | --- | --- |
+| 1 | `infra/` | `docker compose up -d` |
+| 2 | `backend/` | `bun run dev` |
+| 3 | `frontend/` | `bun run dev` |
+| 4 | `mobile/` | `flutter run` |
 
 Then open [http://localhost:5173](http://localhost:5173) (web) and launch the Flutter app on your device or emulator.
 
@@ -509,20 +502,18 @@ All tests live in `tests/`. Start the test database first:
 docker compose -f infra/docker-compose.test.yml up -d
 ```
 
-
-| Type            | Tools                     | Folder                     | Command                    |
-| --------------- | ------------------------- | -------------------------- | -------------------------- |
-| **Unit**        | Jest                      | `tests/unit/`              | `bun run test:unit`        |
-| **Integration** | Jest + Supertest          | `tests/integration/`       | `bun run test:integration` |
-| **API**         | Newman (Postman)          | `tests/api/`               | `bun run test:api`         |
-| **Functional**  | Jest + Supertest          | `tests/functional/`        | `bun run test:functional`  |
-| **E2E**         | Playwright                | `tests/e2e/`               | `bun run test:e2e`         |
-| **Mobile**      | Flutter integration\_test | `mobile/integration_test/` | `flutter test`             |
-| **Load**        | k6                        | `tests/load/`              | `bun run test:load`        |
-| **Security**    | Jest / OWASP ZAP          | `tests/security/`          | `bun run test:security`    |
-| **All**         |                           |                            | `bun run test`             |
-| **Coverage**    | Jest                      |                            | `bun run test:coverage`    |
-
+| Type | Tools | Folder | Command |
+| --- | --- | --- | --- |
+| **Unit** | Jest | `tests/unit/` | `bun run test:unit` |
+| **Integration** | Jest + Supertest | `tests/integration/` | `bun run test:integration` |
+| **API** | Newman (Postman) | `tests/api/` | `bun run test:api` |
+| **Functional** | Jest + Supertest | `tests/functional/` | `bun run test:functional` |
+| **E2E** | Playwright | `tests/e2e/` | `bun run test:e2e` |
+| **Mobile** | Flutter integration\_test | `mobile/integration_test/` | `flutter test` |
+| **Load** | k6 | `tests/load/` | `bun run test:load` |
+| **Security** | Jest / OWASP ZAP | `tests/security/` | `bun run test:security` |
+| **All** |  |  | `bun run test` |
+| **Coverage** | Jest |  | `bun run test:coverage` |
 
 Reports are written to `tests/reports/`.
 
@@ -546,7 +537,7 @@ Reports are written to `tests/reports/`.
 
 ### Testing pyramid
 
-```
+```javascript
         /  E2E  \          few, slow, high confidence
        / Functional \
       /  Integration  \
@@ -559,22 +550,20 @@ Reports are written to `tests/reports/`.
 
 The backend follows a layered MVC architecture:
 
-```
+```javascript
 Request → Route → Controller → Service → Model (Mongoose) → MongoDB
                      ↑             ↑
                  Validators     Business logic
 ```
 
-
-| Layer           | Responsibility                         |
-| --------------- | -------------------------------------- |
-| **Routes**      | Map endpoints to controllers           |
+| Layer | Responsibility |
+| --- | --- |
+| **Routes** | Map endpoints to controllers |
 | **Controllers** | Handle request/response, call services |
-| **Services**    | Business logic                         |
-| **Models**      | Mongoose schemas and DB access         |
-| **Validators**  | Request schema validation              |
-| **Middlewares** | Auth, validation, error handling       |
-
+| **Services** | Business logic |
+| **Models** | Mongoose schemas and DB access |
+| **Validators** | Request schema validation |
+| **Middlewares** | Auth, validation, error handling |
 
 `app.js` exports the Express app separately from `server.js`, so Supertest can run against it without opening a port.
 
@@ -622,19 +611,17 @@ flutter doctor                        # environment check
 
 ## Troubleshooting
 
-
-| Problem                                   | Fix                                                                                                             |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `Cannot connect to the Docker daemon`     | Start Docker Desktop or run `sudo systemctl start docker`                                                       |
-| Port `27018` already in use               | Stop whatever uses it or change the host port in the compose file                                               |
-| Port `8085` / `5000` / `5173` in use      | Change the port in `.env` or the compose file                                                                   |
-| `MongoServerSelectionError`               | Confirm the container is up (`docker ps`) and `MONGO_URI` is correct                                            |
-| CORS errors in browser                    | Check `CLIENT_URL` in `backend/.env`                                                                            |
-| Mobile app can't reach the API            | Use your machine's LAN IP (not `localhost`) in `mobile/.env` when running on a physical device                  |
+| Problem | Fix |
+| --- | --- |
+| `Cannot connect to the Docker daemon` | Start Docker Desktop or run `sudo systemctl start docker` |
+| Port `27018` already in use | Stop whatever uses it or change the host port in the compose file |
+| Port `8085` / `5000` / `5173` in use | Change the port in `.env` or the compose file |
+| `MongoServerSelectionError` | Confirm the container is up (`docker ps`) and `MONGO_URI` is correct |
+| CORS errors in browser | Check `CLIENT_URL` in `backend/.env` |
+| Mobile app can't reach the API | Use your machine's LAN IP (not `localhost`) in `mobile/.env` when running on a physical device |
 | Firebase init fails / `permission denied` | Check the service account key in `backend/.env`, and that Firebase APIs are enabled in the Google Cloud console |
-| Tests hit the dev database                | Check `MONGO_URI_TEST` and that the test container is running                                                   |
-| `flutter doctor` shows issues             | Follow its prompts; accept Android licenses with `flutter doctor --android-licenses`                            |
-
+| Tests hit the dev database | Check `MONGO_URI_TEST` and that the test container is running |
+| `flutter doctor` shows issues | Follow its prompts; accept Android licenses with `flutter doctor --android-licenses` |
 
 ---
 
