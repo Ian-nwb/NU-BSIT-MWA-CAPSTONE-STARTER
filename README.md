@@ -158,9 +158,9 @@ The `novelty/` folder documents what separates this system from existing ones. U
 
 | Category | Examples |
 | --- | --- |
-| **AI / ML** | Model training, inference pipeline, dataset processing, recommendation engines, LLM-powered features (e.g. Gemini/OpenAI API integration), natural language search, document classification |
+| **AI / ML** | Model training, inference pipeline, dataset processing, recommendation engines, LLM-powered features (e.g. Gemini/OpenAI API integration), small language models (SLM) running on-device or self-hosted, natural language search, document classification |
 | **Blockchain** | Smart contracts, on-chain logic, wallet integration, NFT-based certificates/records, decentralized identity, supply-chain traceability ledgers |
-| **Automation** | RPA scripts, workflow automation, scheduled jobs, auto-generated reports, email/SMS notification pipelines, CI/CD-triggered data tasks |
+| **Automation** | n8n workflow automation, RPA scripts, scheduled jobs, auto-generated reports, email/SMS notification pipelines, CI/CD-triggered data tasks |
 | **Systems** | Go or Rust microservices, low-level optimization, custom caching layers, message queues (Kafka/RabbitMQ), load balancers, gRPC services |
 | **Accessibility** | OCR, text-to-speech, voice commands, screen-reader support, sign-language recognition, high-contrast/dyslexia-friendly UI modes, closed captioning |
 | **IoT / Hardware** | Sensor integration, Raspberry Pi/Arduino/ESP32 nodes, real-time telemetry, NFC/RFID access systems, smart home automation, environmental monitoring (temp/humidity/air quality), GPS tracking devices |
@@ -606,6 +606,61 @@ flutter test                          # run unit/widget tests
 flutter analyze                       # static analysis
 flutter doctor                        # environment check
 ```
+
+---
+
+## Deployment
+
+Deploy each layer to whichever platform fits your team's budget and experience. The database stays on **MongoDB Atlas** (M0 free tier is enough for capstone demos) in all cases — the guides below assume your `MONGO_URI` already points to Atlas.
+
+| Layer | Recommended platforms |
+| --- | --- |
+| Frontend (React + Vite) | **Vercel**, Azure Static Web Apps, AWS Amplify |
+| Backend (Express API) | **Render**, Azure App Service, AWS Elastic Beanstalk / ECS |
+| Mobile (Flutter web build) | Vercel, Render (static site), any static host |
+| Database | **MongoDB Atlas** (do not self-host MongoDB for the demo) |
+
+### Vercel (frontend / mobile web)
+
+1. Push the repo to GitHub.
+2. In Vercel → **Add New Project** → import the repo.
+3. Set the root directory to `frontend/` (or `mobile/` for the Flutter web build).
+4. Framework preset: **Vite**. Build command `bun run build`, output `dist`.
+5. Add env var `VITE_API_URL` pointing to your deployed backend URL.
+6. Deploy — Vercel rebuilds on every push to `main`.
+
+### Render (backend)
+
+1. Create a **Web Service** on Render → connect the repo.
+2. Root directory: `backend/`, build command `bun install`, start command `bun run start` (or `node src/server.js`).
+3. Add env vars from `backend/.env` — especially `MONGO_URI` (Atlas SRV string) and `JWT_SECRET`.
+4. Enable auto-deploy from `main`.
+
+### Azure
+
+Azure deploys through GitHub Actions. This repo ships with a **blank workflow file at `.github/workflows/azure-deploy.yml`** — you must configure it yourself:
+
+1. Create the Azure resources (e.g. App Service for the backend, Static Web App for the frontend) in the [Azure Portal](https://portal.azure.com).
+2. Set up the required secrets in your repo: **Settings → Secrets and variables → Actions** — typically `AZURE_CREDENTIALS`, plus app-specific settings like `AZURE_APP_NAME` and `MONGO_URI`.
+3. Fill in `.github/workflows/azure-deploy.yml` using the [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy) and [Azure/static-web-apps-deploy](https://github.com/Azure/static-web-apps-deploy) actions as a reference.
+4. Commit and push — the workflow runs on every push to `main`.
+
+> The file is intentionally blank: Azure setups vary a lot per project (App Service vs Container Apps vs VMs), so copy the workflow from the Azure docs for your chosen service and adapt it.
+
+### AWS
+
+Common capstone-friendly paths:
+
+- **Elastic Beanstalk** — upload the `backend/` as a Node.js app; easiest AWS option for the API.
+- **ECS / Fargate** — containerized backend using the existing Dockerfiles; more setup, more control.
+- **Amplify** — frontend hosting, similar workflow to Vercel.
+- Store secrets (Atlas URI, JWT secret) in **AWS Systems Manager Parameter Store** or as Elastic Beanstalk environment properties — never in the repo.
+
+### After deploying
+
+- Update `CLIENT_URL` / `MOBILE_URL` in the backend env vars to your deployed frontend URLs (fixes CORS).
+- Update the frontend `VITE_API_URL` and mobile `API_URL` to the deployed backend URL.
+- Add all production URLs to `docs/architecture/` for your manuscript's deployment diagram.
 
 ---
 
