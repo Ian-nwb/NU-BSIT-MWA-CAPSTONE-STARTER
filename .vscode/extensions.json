@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "ms-azuretools.vscode-docker",
+    "mongodb.mongodb-vscode",
+    "dart-code.dart-code",
+    "dart-code.flutter",
+    "ms-playwright.playwright",
+    "orta.vscode-jest",
+    "rangav.vscode-thunder-client",
+    "eamodio.gitlens",
+    "bradlc.vscode-tailwindcss",
+    "christian-kohler.path-intellisense",
+    "yoavbls.pretty-ts-errors"
+  ]
+}

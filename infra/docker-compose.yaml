@@ -1,24 +1,83 @@
-version: '3.8'
 services:
+  # ───────────── Database ─────────────
   mongodb:
     image: mongo:latest
     container_name: capstone_db
+    restart: unless-stopped
     ports:
-      - "27018:27017" # Map Local Port 27018 to Container Port 27017
+      - "27018:27017" # Host 27018 -> Container 27017
     volumes:
-      - ./mongodb_data:/data/db # Bind mount for easy backups
+      - ./mongodb_data:/data/db # Bind mount for easy backups (stays inside infra/, or use ../mongodb_data for root)
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   mongo-express:
     image: mongo-express
     container_name: capstone_gui
     restart: always
     ports:
-      - "8085:8081" # Map Local Port 8085 to Container Port 8081
+      - "8085:8081" # Host 8085 -> Container 8081
     environment:
       - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_MONGODB_PORT=27017 # This stays 27017 (internal Docker network)
+      - ME_CONFIG_MONGODB_PORT=27017 # Internal Docker network port
       - ME_CONFIG_BASICAUTH_USERNAME=admin
       - ME_CONFIG_BASICAUTH_PASSWORD=pass
+    depends_on:
+      mongodb:
+        condition: service_healthy
 
-volumes:
-  mongodb_data:
+  # ───────────── Backend (Express) ─────────────
+  backend:
+    image: oven/bun:1
+    container_name: capstone_api
+    restart: unless-stopped
+    working_dir: /app
+    command: sh -c "bun install && bun run dev"
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../apps/backend:/app
+      - /app/node_modules # keep container deps separate from host
+    env_file:
+      - ../apps/backend/.env
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongodb:27017/capstone_db # service name, internal port
+      - CLIENT_URL=http://localhost:5173
+    depends_on:
+      mongodb:
+        condition: service_healthy
+
+  # ───────────── Frontend (React + Vite) ─────────────
+  frontend:
+    image: oven/bun:1
+    container_name: capstone_web
+    restart: unless-stopped
+    working_dir: /app
+    command: sh -c "bun install && bun run dev --host 0.0.0.0"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../apps/frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:5000/api # called from the browser, so host URL
+      - CHOKIDAR_USEPOLLING=true # hot reload on Windows/WSL bind mounts
+    depends_on:
+      - backend
+
+  # ───────────── Mobile (Flutter web build) ─────────────
+  mobile:
+    profiles: ["mobile"]
+    build:
+      context: ../apps/mobile
+      dockerfile: Dockerfile
+    container_name: capstone_mobile_web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

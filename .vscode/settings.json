@@ -1,0 +1,35 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.DS_Store": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "tests/reports": true,
+    "**/package-lock.json": true,
+    "**/bun.lock": true
+  },
+  "eslint.workingDirectories": [
+    { "mode": "auto" }
+  ],
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.rulers": [80]
+  },
+  "jest.jestCommandLine": "bunx jest --config tests/jest.config.js",
+  "jest.runMode": "on-demand",
+  "playwright.reuseBrowser": true
+}
