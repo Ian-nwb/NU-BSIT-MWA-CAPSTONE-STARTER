@@ -45,7 +45,7 @@ Firebase
 | Testing        | Jest, Supertest, Newman, Playwright, k6                                               |
 | Infrastructure | Docker, Docker Compose                                                                |
 | CI/CD          | GitHub Actions                                                                        |
-| Extra services | Firebase (optional: Auth, FCM, Firestore, Storage)                                    |
+| Optional services | Firebase (optional: Auth, FCM, Firestore, Storage)                                    |
 
 
 ---
