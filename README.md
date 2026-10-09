@@ -3,18 +3,18 @@
 A structured monorepo template for National University BSIT-MWA capstone projects.
 MERN stack + Flutter mobile client, with a layered MVC architecture, MongoDB Atlas (recommended for deployment), an optional Python + FastAPI service, and a full testing suite.
 
-MongoDB
-Express
-React
-Node.js
-Bun
-npm
-Docker
-Flutter
-Python
-FastAPI
-Jest
-Firebase
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![Bun](https://img.shields.io/badge/Bun-000000?logo=bun&logoColor=white)
+![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
 
 ---
 
@@ -29,6 +29,8 @@ Firebase
 - [Getting Started](#getting-started)
 - [Environment Variables](#environment-variables)
 - [Running the Project](#running-the-project)
+- [Docker Commands](#docker-commands)
+- [Optional: Python + FastAPI Service](#optional-python--fastapi-service)
 - [Testing](#testing)
 - [Architecture](#architecture)
 - [Deployment](#deployment)
@@ -42,11 +44,11 @@ Firebase
 
 | Layer | Technology |
 | --- | --- |
-| Database | **MongoDB Atlas** (recommended for deployment) — Docker + Mongo Express for local dev |
+| Database | **MongoDB Atlas** (recommended for deployment). Docker + Mongo Express for local dev |
 | Backend | Node.js / Bun, Express.js REST API |
 | Frontend | React + Vite |
 | Mobile | Flutter (Dart) |
-| Package manager | **Bun or npm** — every command in this guide is shown for both |
+| Package manager | **Bun or npm**. Every command in this guide is shown for both |
 | Testing | Jest, Supertest, Newman, Playwright, k6 |
 | Infrastructure | Docker, Docker Compose |
 | CI/CD | GitHub Actions |
@@ -58,7 +60,7 @@ Firebase
 
 ## Project Structure
 
-```javascript
+```
 NU-BSIT-MWA-Capstone-Starter/
 │
 ├── .github/
@@ -198,7 +200,7 @@ The `novelty/` folder documents what separates this system from existing ones. U
 | **Data Visualization** | Interactive charts/graphs, geospatial/heat maps, admin analytics dashboards, drill-down reporting tools |
 | **Multi-tenancy / SaaS** | Organization-based data isolation, subscription/billing integration, role-based workspace permissions, usage metering |
 | **Digital Twins** | Virtual replicas of physical assets/processes, simulation-based monitoring, what-if scenario testing |
-| **Other** | Anything not covered above — bring your own idea |
+| **Other** | Anything not covered above. Bring your own idea |
 
 - **Problem gap**: what current systems fail to do
 - **Comparison matrix**: your system vs. existing systems, feature by feature
@@ -208,7 +210,7 @@ The `novelty/` folder documents what separates this system from existing ones. U
 
 Suggested files:
 
-```javascript
+```
 novelty/
 ├── README.md                 # One-page summary of the novelty
 ├── comparison-matrix.md      # Feature comparison table
@@ -231,7 +233,7 @@ Install these before anything else.
 | **Docker Engine** (Linux) | Containers without Desktop | [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) |
 | **Docker Compose** | Multi-container orchestration | [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/) |
 | **MongoDB Compass** | GUI for MongoDB (dev only) | [https://www.mongodb.com/try/download/compass](https://www.mongodb.com/try/download/compass) |
-| **MongoDB Atlas** | Managed MongoDB — recommended for deployment | [https://www.mongodb.com/atlas](https://www.mongodb.com/atlas) |
+| **MongoDB Atlas** | Managed MongoDB, recommended for deployment | [https://www.mongodb.com/atlas](https://www.mongodb.com/atlas) |
 | **VS Code** | Editor (recommended) | [https://code.visualstudio.com/download](https://code.visualstudio.com/download) |
 | **Postman** | API testing (optional) | [https://www.postman.com/downloads/](https://www.postman.com/downloads/) |
 | **Newman** | Run Postman collections in CLI | [https://www.npmjs.com/package/newman](https://www.npmjs.com/package/newman) |
@@ -438,6 +440,7 @@ npm run dev
 - **Mobile app:** `cd mobile && flutter pub get && flutter run`
 - **Python + FastAPI service:** see [Optional: Python + FastAPI Service](#optional-python--fastapi-service)
 - **Everything in Docker, one command:** `cd infra && docker compose up -d --build`
+- **Docker cheat sheet (logs, shell access, restart):** see [Docker Commands](#docker-commands)
 
 ### Quick Start checklist
 
@@ -508,7 +511,7 @@ docker ps                # confirm containers are running
 ```
 
 > **Dev only:** the Dockerized MongoDB and Mongo Express are for local development.
-> **For deployment, use [MongoDB Atlas](https://www.mongodb.com/atlas)** — the free M0 tier is enough for capstone demos.
+> **For deployment, use [MongoDB Atlas](https://www.mongodb.com/atlas)**. The free M0 tier is enough for capstone demos.
 
 ### 3b. Run everything in Docker (alternative)
 
@@ -536,6 +539,7 @@ docker compose up -d --build
 
 > Inside Docker, the backend reaches MongoDB at `mongodb://mongodb:27017/capstone_db` (service name + internal port). From your host, use `localhost:27018`.
 > The Flutter **web** build can run in Docker, but Android/iOS builds cannot. Run those with `flutter run` locally.
+> Logs, shell access, restarts: see [Docker Commands](#docker-commands).
 
 ### 4. Set up the backend
 
@@ -578,7 +582,7 @@ flutter doctor           # check your setup
 flutter run              # pick an Android emulator, iOS simulator, or browser
 ```
 
-The Flutter app is a required client in this project — every team member should be able to build and run it.
+The Flutter app is a required client in this project. Every team member should be able to build and run it.
 
 ### 7. Set up the Python + FastAPI service (optional)
 
@@ -594,11 +598,11 @@ See [Optional: Python + FastAPI Service](#optional-python--fastapi-service).
 PORT=5000
 NODE_ENV=development
 
-# MongoDB (Docker — local development)
+# MongoDB (Docker, local development)
 MONGO_URI=mongodb://localhost:27018/capstone_db
 MONGO_URI_TEST=mongodb://localhost:27019/capstone_test
 
-# MongoDB Atlas (deployment — get the SRV string from your Atlas cluster)
+# MongoDB Atlas (deployment: get the SRV string from your Atlas cluster)
 # MONGO_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/capstone_db
 
 # Auth
@@ -638,11 +642,11 @@ MODEL_PATH=./models/model.pkl
 >
 > Never commit `.env` files.
 
-> **MongoDB Compass and Mongo Express are dev tools only.** In production, connect the backend to MongoDB Atlas by setting `MONGO_URI` to your Atlas SRV connection string — no changes to the code are needed.
+> **MongoDB Compass and Mongo Express are dev tools only.** In production, connect the backend to MongoDB Atlas by setting `MONGO_URI` to your Atlas SRV connection string. No code changes are needed.
 
 ### Firebase (optional add-on)
 
-If your capstone needs Firebase — push notifications (FCM), file storage, extra auth providers, or Firestore for non-core data — you don't add a `firebase/` folder to the repo. Firebase is a cloud service, so you only add config and SDK setup:
+If your capstone needs Firebase (push notifications (FCM), file storage, extra auth providers, or Firestore for non-core data) you don't add a `firebase/` folder to the repo. Firebase is a cloud service, so you only add config and SDK setup:
 
 ```bash
 # backend
@@ -664,9 +668,9 @@ Where the config lives:
 
 | Layer | Setup |
 | --- | --- |
-| Backend | `backend/src/config/firebase.js` — initialized from a service account key stored in `.env` |
-| Frontend | `frontend/src/config/firebase.js` — initialized from `VITE_FIREBASE_*` env vars |
-| Mobile | `mobile/lib/firebase_options.dart` — generated by `flutterfire configure` |
+| Backend | `backend/src/config/firebase.js`, initialized from a service account key stored in `.env` |
+| Frontend | `frontend/src/config/firebase.js`, initialized from `VITE_FIREBASE_*` env vars |
+| Mobile | `mobile/lib/firebase_options.dart`, generated by `flutterfire configure` |
 
 Add these to `.env` files (never commit them):
 
@@ -695,8 +699,184 @@ Open four terminals (five if you use the Python service):
 | 2 | `backend/` | `bun run dev` | `npm run dev` |
 | 3 | `frontend/` | `bun run dev` | `npm run dev` |
 | 4 | `mobile/` | `flutter run` | `flutter run` |
-| 5 (optional) 
+| 5 (optional) | `novelty/python-service/` | `uvicorn app.main:app --reload --port 8000` | `uvicorn app.main:app --reload --port 8000` |
+
 Then open [http://localhost:5173](http://localhost:5173) (web) and launch the Flutter app on your device or emulator.
+
+---
+
+## Docker Commands
+
+Run these from the `infra/` folder (where `docker-compose.yml` lives), or from the root with `-f infra/docker-compose.yml`.
+
+### Compose service names
+
+Most commands take a **service name** (from `docker-compose.yml`). `docker exec` and `docker logs` take the **container name** instead.
+
+| What | Service name | Container name | URL / Port |
+| --- | --- | --- | --- |
+| MongoDB | `mongodb` | `capstone_db` | `localhost:27018` |
+| Mongo Express | `mongo-express` | `capstone_gui` | [http://localhost:8085](http://localhost:8085) |
+| Backend (Express) | `backend` | `capstone_api` | [http://localhost:5000](http://localhost:5000) |
+| Frontend (Vite) | `frontend` | `capstone_web` | [http://localhost:5173](http://localhost:5173) |
+| Mobile (Flutter web) | `mobile` | `capstone_mobile_web` | [http://localhost:8080](http://localhost:8080) |
+| Python service (optional) | `python_service` | `capstone_python` | [http://localhost:8000](http://localhost:8000) |
+
+### Start and stop
+
+| Task | Command |
+| --- | --- |
+| Start everything (background) | `docker compose up -d` |
+| Start and rebuild images | `docker compose up -d --build` |
+| Start only some services | `docker compose up -d mongodb mongo-express` |
+| Start in the foreground (see logs live, Ctrl+C stops) | `docker compose up` |
+| Stop everything (keeps containers) | `docker compose stop` |
+| Start stopped containers again | `docker compose start` |
+| Stop and remove containers + network | `docker compose down` |
+| Stop and also delete volumes | `docker compose down -v` |
+| Restart everything | `docker compose restart` |
+| Restart one service | `docker compose restart backend` |
+| Stop one service | `docker compose stop frontend` |
+
+> `docker compose down -v` deletes named volumes. This project stores MongoDB data in the bind mount `infra/mongodb_data/`, so to wipe the database you must also delete that folder.
+
+### Check status
+
+```bash
+docker compose ps                     # services in this project and their status
+docker ps                             # all running containers
+docker ps -a                          # including stopped ones
+docker stats                          # live CPU / memory per container (Ctrl+C to exit)
+docker compose config                 # print the final merged compose file (catches typos)
+```
+
+### View logs
+
+| Task | Command |
+| --- | --- |
+| All services | `docker compose logs` |
+| Follow all services live | `docker compose logs -f` |
+| One service | `docker compose logs backend` |
+| Follow one service | `docker compose logs -f backend` |
+| Last 100 lines, then follow | `docker compose logs -f --tail=100 backend` |
+| Several services | `docker compose logs -f backend frontend` |
+| With timestamps | `docker compose logs -f -t backend` |
+| By container name | `docker logs -f capstone_api` |
+
+### Access a container (shell)
+
+Open an interactive shell inside a running container:
+
+```bash
+docker compose exec backend sh              # backend (Express)
+docker compose exec frontend sh             # frontend (Vite)
+docker compose exec mongodb bash            # MongoDB container
+docker compose exec python_service bash     # Python service (optional)
+docker compose exec mobile sh               # Flutter web / Nginx
+```
+
+The same thing using container names:
+
+```bash
+docker exec -it capstone_api sh
+docker exec -it capstone_web sh
+docker exec -it capstone_db bash
+```
+
+Type `exit` to leave the shell.
+
+### Run a command inside a container
+
+You do not need a shell to run a single command:
+
+| Task | Bun | npm |
+| --- | --- | --- |
+| Install a package in the backend container | `docker compose exec backend bun add <pkg>` | `docker compose exec backend npm install <pkg>` |
+| Install a package in the frontend container | `docker compose exec frontend bun add <pkg>` | `docker compose exec frontend npm install <pkg>` |
+| Run a backend script (e.g. seed) | `docker compose exec backend bun run seed` | `docker compose exec backend npm run seed` |
+| Run backend lint | `docker compose exec backend bun run lint` | `docker compose exec backend npm run lint` |
+| Reinstall dependencies | `docker compose exec backend bun install` | `docker compose exec backend npm install` |
+
+```bash
+docker compose exec python_service pytest              # run Python tests (optional service)
+docker compose exec backend env                        # print environment variables
+docker compose exec backend ls -la /app                # list files inside the container
+```
+
+> The compose file runs the backend and frontend on the `oven/bun` image, so `bun` commands work inside them out of the box. If your team uses npm, change `image: oven/bun:1` to `image: node:22-alpine` and the `command:` lines to use `npm install && npm run dev` (frontend: `npm run dev -- --host 0.0.0.0`). Then use the npm column above.
+
+### MongoDB shell and backups
+
+```bash
+# Open the Mongo shell on the capstone database
+docker compose exec mongodb mongosh capstone_db
+
+# Inside mongosh
+show collections
+db.users.find().limit(5)
+exit
+```
+
+Back up and restore the database:
+
+```bash
+# Backup: dump to a compressed archive, then copy it to your machine
+docker compose exec mongodb mongodump --db capstone_db --archive=/tmp/capstone.archive --gzip
+docker cp capstone_db:/tmp/capstone.archive ./capstone.archive
+
+# Restore: copy the archive in, then restore it
+docker cp ./capstone.archive capstone_db:/tmp/capstone.archive
+docker compose exec mongodb mongorestore --archive=/tmp/capstone.archive --gzip --drop
+```
+
+Because the data is a bind mount at `infra/mongodb_data/`, you can also back up by stopping the stack (`docker compose down`) and copying that folder.
+
+### Rebuild and refresh
+
+| Situation | Command |
+| --- | --- |
+| Changed a `Dockerfile` or build context | `docker compose up -d --build` |
+| Rebuild one service | `docker compose build backend` then `docker compose up -d backend` |
+| Rebuild from scratch (ignore cache) | `docker compose build --no-cache` |
+| Changed a `.env` file | `docker compose up -d --force-recreate backend` |
+| Pull newer base images | `docker compose pull` |
+| Recreate all containers | `docker compose up -d --force-recreate` |
+
+> `docker compose restart` does **not** reload `.env` or `env_file` changes. Use `--force-recreate` after editing environment variables.
+
+### Clean up
+
+```bash
+docker compose down --rmi local        # remove containers + images built by this project
+docker image prune                     # remove dangling images
+docker container prune                 # remove all stopped containers
+docker volume ls                       # list volumes
+docker volume prune                    # remove unused volumes (careful)
+docker system df                       # see how much disk Docker is using
+docker system prune -a                 # remove ALL unused images/containers/networks (careful)
+```
+
+### Test database (separate stack)
+
+```bash
+docker compose -f infra/docker-compose.test.yml up -d       # start the isolated test DB
+docker compose -f infra/docker-compose.test.yml down        # stop it
+docker compose -f infra/docker-compose.test.yml down -v     # stop it and wipe its data
+```
+
+### Quick recipes
+
+| I want to... | Run |
+| --- | --- |
+| Start the whole stack | `cd infra && docker compose up -d` |
+| See why the backend crashed | `docker compose logs --tail=100 backend` |
+| Watch the backend live | `docker compose logs -f backend` |
+| Open a shell in the backend | `docker compose exec backend sh` |
+| Browse the DB in the terminal | `docker compose exec mongodb mongosh capstone_db` |
+| Apply a changed `.env` | `docker compose up -d --force-recreate backend` |
+| Stop everything for the day | `docker compose stop` |
+| Start fresh (wipe containers) | `docker compose down` then `docker compose up -d --build` |
+| Free up disk space | `docker system prune` |
 
 ---
 
@@ -888,6 +1068,14 @@ Add this service to `infra/docker-compose.yml`:
 
 Inside Docker, the backend reaches it by service name, so set `PYTHON_SERVICE_URL=http://python_service:8000` in the backend container's environment (from your host, keep `http://localhost:8000`).
 
+Handy commands for this service (see [Docker Commands](#docker-commands) for the rest):
+
+```bash
+docker compose logs -f python_service
+docker compose exec python_service bash
+docker compose up -d --build python_service
+```
+
 ### 8. Test it
 
 `novelty/python-service/tests/test_main.py`:
@@ -978,7 +1166,7 @@ These scripts use `npm run` internally so they work no matter which package mana
 
 ### Testing pyramid
 
-```javascript
+```
         /  E2E  \          few, slow, high confidence
        / Functional \
       /  Integration  \
@@ -991,7 +1179,7 @@ These scripts use `npm run` internally so they work no matter which package mana
 
 The backend follows a layered MVC architecture:
 
-```javascript
+```
 Request → Route → Controller → Service → Model (Mongoose) → MongoDB
                      ↑             ↑
                  Validators     Business logic
@@ -1016,7 +1204,7 @@ All three clients (web, mobile, backend admin tooling) consume the same REST API
 
 ## Deployment
 
-Deploy each layer to whichever platform fits your team's budget and experience. The database stays on **MongoDB Atlas** (M0 free tier is enough for capstone demos) in all cases — the guides below assume your `MONGO_URI` already points to Atlas.
+Deploy each layer to whichever platform fits your team's budget and experience. The database stays on **MongoDB Atlas** (M0 free tier is enough for capstone demos) in all cases. The guides below assume your `MONGO_URI` already points to Atlas.
 
 | Layer | Recommended platforms |
 | --- | --- |
@@ -1035,7 +1223,7 @@ Deploy each layer to whichever platform fits your team's budget and experience. 
    - Bun: install command `bun install`, build command `bun run build`
    - npm: install command `npm install`, build command `npm run build`
 5. Add env var `VITE_API_URL` pointing to your deployed backend URL.
-6. Deploy — Vercel rebuilds on every push to `main`.
+6. Deploy. Vercel rebuilds on every push to `main`.
 
 ### Render (backend)
 
@@ -1044,7 +1232,7 @@ Deploy each layer to whichever platform fits your team's budget and experience. 
    - Bun: build command `bun install`, start command `bun run start`
    - npm: build command `npm install`, start command `npm start`
    - Either way, `node src/server.js` also works as the start command.
-3. Add env vars from `backend/.env` — especially `MONGO_URI` (Atlas SRV string) and `JWT_SECRET`.
+3. Add env vars from `backend/.env`, especially `MONGO_URI` (Atlas SRV string) and `JWT_SECRET`.
 4. Enable auto-deploy from `main`.
 
 > If you use Bun on Render, make sure Bun is available in the build environment (set a Bun version or use a Dockerfile). npm works out of the box.
@@ -1055,12 +1243,12 @@ See [Deploy it](#9-deploy-it) in the Python section.
 
 ### Azure
 
-Azure deploys through GitHub Actions. This repo ships with a **blank workflow file at `.github/workflows/azure-deploy.yml`** — you must configure it yourself:
+Azure deploys through GitHub Actions. This repo ships with a **blank workflow file at `.github/workflows/azure-deploy.yml`**. You must configure it yourself:
 
 1. Create the Azure resources (e.g. App Service for the backend, Static Web App for the frontend) in the [Azure Portal](https://portal.azure.com).
-2. Set up the required secrets in your repo: **Settings → Secrets and variables → Actions** — typically `AZURE_CREDENTIALS`, plus app-specific settings like `AZURE_APP_NAME` and `MONGO_URI`.
+2. Set up the required secrets in your repo: **Settings → Secrets and variables → Actions**, typically `AZURE_CREDENTIALS`, plus app-specific settings like `AZURE_APP_NAME` and `MONGO_URI`.
 3. Fill in `.github/workflows/azure-deploy.yml` using the [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy) and [Azure/static-web-apps-deploy](https://github.com/Azure/static-web-apps-deploy) actions as a reference.
-4. Commit and push — the workflow runs on every push to `main`.
+4. Commit and push. The workflow runs on every push to `main`.
 
 > The file is intentionally blank: Azure setups vary a lot per project (App Service vs Container Apps vs VMs), so copy the workflow from the Azure docs for your chosen service and adapt it.
 
@@ -1068,10 +1256,10 @@ Azure deploys through GitHub Actions. This repo ships with a **blank workflow fi
 
 Common capstone-friendly paths:
 
-- **Elastic Beanstalk** — upload the `backend/` as a Node.js app; easiest AWS option for the API.
-- **ECS / Fargate** — containerized backend using the existing Dockerfiles; more setup, more control.
-- **Amplify** — frontend hosting, similar workflow to Vercel.
-- Store secrets (Atlas URI, JWT secret) in **AWS Systems Manager Parameter Store** or as Elastic Beanstalk environment properties — never in the repo.
+- **Elastic Beanstalk**: upload the `backend/` as a Node.js app; easiest AWS option for the API.
+- **ECS / Fargate**: containerized backend using the existing Dockerfiles; more setup, more control.
+- **Amplify**: frontend hosting, similar workflow to Vercel.
+- Store secrets (Atlas URI, JWT secret) in **AWS Systems Manager Parameter Store** or as Elastic Beanstalk environment properties. Never in the repo.
 
 ### After deploying
 
@@ -1084,16 +1272,17 @@ Common capstone-friendly paths:
 
 ## Useful Commands
 
-### Docker
+### Docker (short version)
 
 ```bash
 docker compose up -d                  # start services
-docker compose down                   # stop services
-docker compose down -v                # stop and delete volumes (wipes DB data)
-docker compose logs -f                # follow logs
-docker compose restart                # restart services
-docker exec -it <container> mongosh   # open Mongo shell
+docker compose down                   # stop and remove containers
+docker compose logs -f backend        # follow backend logs
+docker compose exec backend sh        # shell into the backend
+docker compose exec mongodb mongosh   # open Mongo shell
 ```
+
+Full list: [Docker Commands](#docker-commands).
 
 ### Backend / Frontend
 
@@ -1145,9 +1334,16 @@ pytest                                        # run Python tests
 | `Cannot connect to the Docker daemon` | Start Docker Desktop or run `sudo systemctl start docker` |
 | Port `27018` already in use | Stop whatever uses it or change the host port in the compose file |
 | Port `8085` / `5000` / `5173` / `8000` in use | Change the port in `.env` or the compose file |
-| `MongoServerSelectionError` | Confirm the container is up (`docker ps`) and `MONGO_URI` is correct |
+| `MongoServerSelectionError` | Confirm the container is up (`docker compose ps`) and `MONGO_URI` is correct |
+| A container keeps restarting or exits | Read the logs: `docker compose logs --tail=100 <service>` |
+| Changed `.env` but the container still uses old values | `docker compose up -d --force-recreate <service>` (`restart` does not reload env) |
+| Changed a Dockerfile but nothing changed | `docker compose up -d --build` (or `docker compose build --no-cache`) |
+| `no configuration file provided: not found` | Run the command from `infra/`, or add `-f infra/docker-compose.yml` |
+| Frontend hot reload not working in Docker (Windows/WSL) | Keep `CHOKIDAR_USEPOLLING=true` on the frontend service |
+| Container name already in use | `docker compose down`, or `docker rm -f <container_name>` |
+| Docker is eating disk space | `docker system df`, then `docker system prune` |
 | CORS errors in browser | Check `CLIENT_URL` in `backend/.env` |
-| `bun: command not found` | Install Bun, or use the npm commands instead — both work |
+| `bun: command not found` | Install Bun, or use the npm commands instead. Both work |
 | `npm: command not found` | Install Node.js LTS (it includes npm) |
 | Two lockfiles in the repo (`bun.lock` and `package-lock.json`) | Pick one package manager, delete the other lockfile, reinstall |
 | Dependencies behave strangely after switching Bun ↔ npm | Delete `node_modules` and the lockfile, then reinstall with one tool |
