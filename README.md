@@ -1,6 +1,6 @@
-# NU CCIT Capstone Starter
+# NU BSIT-MWA Capstone Starter
 
-A structured monorepo template for National University CCIT capstone projects.
+A structured monorepo template for National University BSIT-MWA capstone projects.
 MERN stack + Flutter mobile client, with a layered MVC architecture, MongoDB Atlas (recommended for deployment), and a full testing suite.
 
 MongoDB
