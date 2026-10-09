@@ -59,7 +59,7 @@ Firebase
 ## Project Structure
 
 ```javascript
-NU-CCIT-Capstone-Starter/
+NU-BSIT-MWA-Capstone-Starter/
 │
 ├── .github/
 │   ├── workflows/              # CI/CD: lint, test, build, deploy
@@ -340,14 +340,14 @@ The shortest path from zero to a running app. Every JavaScript command is shown 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Ian-nwb/NU-CCIT-Capstone-Starter.git
-cd NU-CCIT-Capstone-Starter
+git clone https://github.com/Ian-nwb/NU-BSIT-MWA-Capstone-Starter.git
+cd NU-BSIT-MWA-Capstone-Starter
 ```
 
 To start your own project from this template instead of contributing to it, create your own repo and point the clone at it:
 
 ```bash
-git clone https://github.com/Ian-nwb/NU-CCIT-Capstone-Starter.git my-capstone
+git clone https://github.com/Ian-nwb/NU-BSIT-MWA-Capstone-Starter.git my-capstone
 cd my-capstone
 git remote set-url origin https://github.com/<your-username>/<your-repo>.git
 git push -u origin main
@@ -475,8 +475,8 @@ This is the detailed version of the [Quick Start](#quick-start-clone-and-run).
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Ian-nwb/NU-CCIT-Capstone-Starter.git
-cd NU-CCIT-Capstone-Starter
+git clone https://github.com/Ian-nwb/NU-BSIT-MWA-Capstone-Starter.git
+cd NU-BSIT-MWA-Capstone-Starter
 ```
 
 ### 2. Install root dependencies
