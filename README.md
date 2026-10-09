@@ -177,8 +177,6 @@ NU-BSIT-MWA-Capstone-Starter/
 
 ## Novelty
 
-The `novelty/` folder documents what separates this system from existing ones. Use it to keep your defense material in one place.
-
 **Your novelty does not have to be a brand-new invention.** It can be any tech-related differentiator that is unique to your system compared to existing solutions. Here are accepted novelty categories and examples:
 
 | Category | Examples |
