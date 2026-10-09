@@ -27,6 +27,7 @@ Firebase
 - [Running the Project](#running-the-project)
 - [Testing](#testing)
 - [Architecture](#architecture)
+- [Deployment](#deployment)
 - [Useful Commands](#useful-commands)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
