@@ -1,3 +1,4 @@
+#Will add FastAPI later consider this a WIP
 services:
   # ───────────── Database ─────────────
   mongodb:
