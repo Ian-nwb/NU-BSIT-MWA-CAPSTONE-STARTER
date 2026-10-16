@@ -1425,6 +1425,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## Authors
 
 Ian-nwb — [https://github.com/Ian-nwb](https://github.com/Ian-nwb)
+trisha-nev—[https://github.com/trisha-nev](https://github.com/trisha-nev)
 
 ## License
 
