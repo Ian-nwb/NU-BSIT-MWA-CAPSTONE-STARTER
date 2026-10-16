@@ -22,6 +22,7 @@ MERN stack + Flutter mobile client, with a layered MVC architecture, MongoDB Atl
 
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
+- [CCIT Research Agenda](#ccit-research-agenda)
 - [Novelty](#novelty)
 - [Prerequisites](#prerequisites)
 - [Quick Start: Clone and Run](#quick-start-clone-and-run)
@@ -175,6 +176,53 @@ NU-BSIT-MWA-Capstone-Starter/
 
 ---
 
+## CCIT Research Agenda
+
+Your capstone should align with the research agenda of the NU College of Computing and Information Technologies (CCIT).
+
+**Goal.** The Computing Research Center aims to pioneer and direct the development, advancement, preservation, and dissemination of knowledge in the field of Information Technology and Computer Science.
+
+**Expected outcomes of completed research projects:**
+
+1. Revolutionize and innovate computing research endeavors.
+2. Develop solutions to pressing societal and research problems.
+3. Strengthen research collaborations within the NU community.
+4. Network with other institutions, locally and abroad.
+
+### SDG Technology Drivers and Innovation Frameworks
+
+**Technology drivers:** IoT, AI, Machine Learning, Blockchain, Big Data, Robotics, AR/VR, Drones, 5G, 3D Printing.
+
+**Approach:**
+
+1. **SDG Problem Analysis**: identify the SDG-related problem.
+2. **SDG-Specific Tech Application**: pick the technology and check it for *feasibility proven*, *transformative impact*, and *adoption potential*.
+3. **Applying Innovation Frameworks**: combine technologies into a solution.
+
+**Example combinations:**
+
+| Technologies | Result |
+| --- | --- |
+| IoT + AI + Sensors + Big Data | Smart Metering |
+| AI + Sensors + Big Data + Drones | Precision Monitoring |
+| Sensors + Robotics + AI + 5G | Autonomous Vehicles |
+
+### Priority SDGs
+
+| SDG | Focus | Why it matters |
+| --- | --- | --- |
+| **3** Good Health & Well-being | Ensure healthy lives and promote well-being for all at all ages | An additional 18 million health workers are needed, mainly in low and lower-middle income countries, to achieve universal health coverage by 2030 |
+| **4** Quality Education | Ensure inclusive and quality education for all and promote lifelong learning | Globally, around 5.5 million more girls than boys (primary school age) were out of school in 2018; about 1/3 of developing countries have not achieved gender parity in primary education |
+| **11** Sustainable Cities & Communities | Make cities and human settlements inclusive, safe, resilient, and sustainable | 9 in 10 people living in urban areas worldwide were breathing air that did not meet WHO air quality guidelines |
+| **16** Peace, Justice & Strong Institutions | Promote inclusive societies, provide access to justice for all, and build effective, accountable, and inclusive institutions at all levels | Every day, 100 civilians, including women and children, are killed in armed conflicts despite protections under international law |
+| **17** Partnerships for the Goals | Strengthen and revitalize the global partnership for sustainable development | Strong international cooperation is needed now more than ever so that countries have the means to achieve the SDGs by 2030 |
+
+Source: *The Role of Sustainable Technologies in Achieving the SDGs*, Next Big Thing AG.
+
+> In your `novelty/README.md`, state which SDG(s) your capstone addresses and which technology drivers it uses.
+
+---
+
 ## Novelty
 
 **Your novelty does not have to be a brand-new invention.** It can be any tech-related differentiator that is unique to your system compared to existing solutions. Here are accepted novelty categories and examples:
@@ -198,8 +246,14 @@ NU-BSIT-MWA-Capstone-Starter/
 | **Data Visualization** | Interactive charts/graphs, geospatial/heat maps, admin analytics dashboards, drill-down reporting tools |
 | **Multi-tenancy / SaaS** | Organization-based data isolation, subscription/billing integration, role-based workspace permissions, usage metering |
 | **Digital Twins** | Virtual replicas of physical assets/processes, simulation-based monitoring, what-if scenario testing |
+| **Big Data** | Large-scale data pipelines, batch/stream processing, data lakes/warehouses, ETL, analytics over high-volume datasets |
+| **Robotics** | Robot control software, ROS integration, autonomous navigation, sensor fusion, robotic process simulation |
+| **Drones** | Aerial monitoring/mapping, autonomous flight paths, drone imagery analysis, precision agriculture, delivery/inspection systems |
+| **5G / Connectivity** | Low-latency edge applications, network slicing, massive IoT connectivity, remote/real-time control over mobile networks |
+| **3D Printing** | Parametric/generative models, printable part design, print-job management, prototyping of custom assistive devices |
 | **Other** | Anything not covered above. Bring your own idea |
 
+- **SDG alignment**: which [CCIT priority SDG(s)](#priority-sdgs) your system addresses
 - **Problem gap**: what current systems fail to do
 - **Comparison matrix**: your system vs. existing systems, feature by feature
 - **Unique contribution**: the algorithm, workflow, or approach that is new
