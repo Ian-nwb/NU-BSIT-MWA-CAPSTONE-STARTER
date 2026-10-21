@@ -232,7 +232,7 @@ Source: *The Role of Sustainable Technologies in Achieving the SDGs*, Next Big T
 | **AI / ML** | Model training, inference pipeline, dataset processing, recommendation engines, LLM-powered features (e.g. Gemini/OpenAI API integration), small language models (SLM) running on-device or self-hosted, natural language search, document classification (a good fit for the optional [Python + FastAPI service](#optional-python--fastapi-service)) |
 | **Blockchain** | Smart contracts, on-chain logic, wallet integration, NFT-based certificates/records, decentralized identity, supply-chain traceability ledgers |
 | **Automation** | n8n workflow automation, RPA scripts, scheduled jobs, auto-generated reports, email/SMS notification pipelines, CI/CD-triggered data tasks |
-| **Systems** | Go or Rust microservices, low-level optimization, custom caching layers, message queues (Kafka/RabbitMQ), load balancers, gRPC services |
+| **Microservices** | Go or Rust microservices, low-level optimization, custom caching layers, message queues (Kafka/RabbitMQ), load balancers, gRPC services |
 | **Accessibility** | OCR, text-to-speech, voice commands, screen-reader support, sign-language recognition, high-contrast/dyslexia-friendly UI modes, closed captioning |
 | **IoT / Hardware** | Sensor integration, Raspberry Pi/Arduino/ESP32 nodes, real-time telemetry, NFC/RFID access systems, smart home automation, environmental monitoring (temp/humidity/air quality), GPS tracking devices |
 | **Computer Vision** | Object/face detection, image classification, video analytics, license plate recognition, defect/quality inspection, pose estimation, barcode/QR scanning |
