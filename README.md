@@ -1,7 +1,7 @@
 # NU BSIT-MWA Capstone Starter
 
 A structured monorepo template for National University BSIT-MWA capstone projects.
-MERN stack + Flutter mobile client, with a layered MVC architecture, MongoDB Atlas (recommended for deployment), an optional Python + FastAPI service, and a full testing suite.
+MERN stack + Flutter mobile client, with a layered MVC architecture, MongoDB Atlas (recommended for deployment), an optional Python + FastAPI service, Firebase BAAS, and a full testing suite.
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white)
